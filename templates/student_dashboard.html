@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+
+      
+      
+    <h1>Student Dashboard</h1>
+    <p>Welcome to your dashboard, {{ username }}!</p>
+    <p>Your Subject Marks</p>
+    <table border="1" >
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <tr>
+            <td>DBMS</td>
+            <td>{{dbms}}</td>
+        </tr>
+        <tr>
+            <td>COA</td>
+            <td>{{coa}}</td>
+        </tr>
+        <tr>
+            <td>IWT</td>
+            <td>{{iwt}}</td>
+        </tr>
+        <tr>
+            <td>DS</td>
+            <td>{{ds}}</td>
+        </tr>
+        <tr>
+            <td>CPP</td>
+            <td>{{cpp}}</td>
+        </tr>
+        <tr>
+            <td>Total Marks</td>
+            <td>{{sum_marks}}</td>
+    </table>
+    <a href="/change_password">change password</a>
+    <a href="/logout">Logout</a>
+   
+</body>
+</html>

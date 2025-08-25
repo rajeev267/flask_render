@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+  
+   
+    <h1>change password</h1>
+    <form action="/change_password" method="post">
+        {{form.hidden_tag()}}
+        <div class="form-group">
+            {{ form.username.label }}
+            {{ form.username(size=32) }}
+        </div>
+        <div class="form-group">
+            {{ form.old_password.label }}
+            {{ form.old_password(size=32) }}
+        </div>
+        <div class="form-group">
+            {{ form.new_password.label }}
+            {{ form.new_password(size=32) }}
+        </div>
+        {{ form.submit(class="btn") }}
+    </form>
+</body>
+</html>

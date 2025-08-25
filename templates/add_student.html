@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new student page
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+ <h2>Add New Student</h2>
+    <form method="POST" action="/add_student">
+        {{ form.hidden_tag() }}
+        {{ form.username.label }} {{ form.username(size=32) }}<br>
+        {{ form.password.label }} {{ form.password(size=32) }}<br>
+        {{ form.dbms.label }} {{ form.dbms(size=32) }}<br>
+        {{ form.coa.label }} {{ form.coa(size=32) }}<br>
+        {{ form.iwt.label }} {{ form.iwt(size=32) }}<br>
+        {{ form.ds.label }} {{ form.ds(size=32) }}<br>
+        {{ form.cpp.label }} {{ form.cpp(size=32) }}<br>
+        {{ form.submit.label }}<br>
+      
+        {{ form.submit() }}
+    </form>
+    
+</body>
+</html>
