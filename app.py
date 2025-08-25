@@ -7,6 +7,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///student.db'
 app.config['SECRET_KEY'] = '123457890'
 db.init_app(app)
+from keep_alive import keep_alive
+keep_alive()
 
 
 @app.route('/')
